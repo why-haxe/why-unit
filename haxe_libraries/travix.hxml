@@ -1,0 +1,7 @@
+# @install: lix --silent download "gh://github.com/back2dos/travix#2cf595f2e33a43d17ef48a92aa5a71d2ed169871" into travix/0.14.1/github/2cf595f2e33a43d17ef48a92aa5a71d2ed169871
+# @post-install: cd ${HAXE_LIBCACHE}/travix/0.14.1/github/2cf595f2e33a43d17ef48a92aa5a71d2ed169871 && haxe -cp src --run travix.PostDownload
+# @run: haxelib run-dir travix ${HAXE_LIBCACHE}/travix/0.14.1/github/2cf595f2e33a43d17ef48a92aa5a71d2ed169871
+-lib tink_cli
+-cp ${HAXE_LIBCACHE}/travix/0.14.1/github/2cf595f2e33a43d17ef48a92aa5a71d2ed169871/src
+-D travix=0.14.1
+--macro travix.Macro.setup()
