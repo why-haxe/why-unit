@@ -22,14 +22,15 @@ abstract Radian(Float) {
 	public static inline function atan2(y, x)
 		return new Radian(Math.atan2(y, x));
 	
-	@:op(A+B) public function add(rhs:Radian):Radian;
-	@:op(A-B) public function sub(rhs:Radian):Radian;
-	@:op(A*B) public function mul(rhs:Radian):Radian;
-	@:op(A/B) public function div(rhs:Radian):Radian;
-	@:op(A>B) public function gt(rhs:Radian):Bool;
-	@:op(A<B) public function lt(rhs:Radian):Bool;
-	@:op(A>=B) public function gte(rhs:Radian):Bool;
-	@:op(A<=B) public function lte(rhs:Radian):Bool;
-	@:op(A==B) public function eq(rhs:Radian):Bool;
-	@:op(A!=B) public function neq(rhs:Radian):Bool;
+	@:op(A+B) public static function add(lhs:Radian, rhs:Radian):Radian;
+	@:op(A-B) public static function sub(lhs:Radian, rhs:Radian):Radian;
+	@:op(A*B) public static function mulFloat(lhs:Radian, rhs:Float):Radian;
+	@:op(A/B) public static function divFloat(lhs:Radian, rhs:Float):Radian;
+	@:op(A/B) public static function div(lhs:Radian, rhs:Radian):Float;
+	@:op(A>B) public static function gt(lhs:Radian, rhs:Radian):Bool;
+	@:op(A<B) public static function lt(lhs:Radian, rhs:Radian):Bool;
+	@:op(A>=B) public static function gte(lhs:Radian, rhs:Radian):Bool;
+	@:op(A<=B) public static function lte(lhs:Radian, rhs:Radian):Bool;
+	@:op(A==B) public static function eq(lhs:Radian, rhs:Radian):Bool;
+	@:op(A!=B) public static function neq(lhs:Radian, rhs:Radian):Bool;
 }

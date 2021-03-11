@@ -25,6 +25,10 @@ class RunTests {
 		
 		asserts.assert(r == d);
 		asserts.assert(d == r);
+		asserts.assert((r / 10) == new Degree(18));
+		asserts.assert((r / new Degree(18)) == 10);
+		// asserts.assert((10 / r) == new Degree(18));
+		asserts.assert((new Degree(1800) / r) == 10);
 		
 		final r = new Radian(0);
 		asserts.assert((r + new Radian(1)).toFloat() == 1);

@@ -5,14 +5,15 @@ abstract Kelvin(Float) {
 	
 	public inline function toFloat() return this;
 	
-	@:op(A+B) public function add(rhs:Kelvin):Kelvin;
-	@:op(A-B) public function sub(rhs:Kelvin):Kelvin;
-	@:op(A*B) public function mul(rhs:Kelvin):Kelvin;
-	@:op(A/B) public function div(rhs:Kelvin):Kelvin;
-	@:op(A>B) public function gt(rhs:Kelvin):Bool;
-	@:op(A<B) public function lt(rhs:Kelvin):Bool;
-	@:op(A>=B) public function gte(rhs:Kelvin):Bool;
-	@:op(A<=B) public function lte(rhs:Kelvin):Bool;
-	@:op(A==B) public function eq(rhs:Kelvin):Bool;
-	@:op(A!=B) public function neq(rhs:Kelvin):Bool;
+	@:op(A+B) public static function add(lhs:Kelvin, rhs:Kelvin):Kelvin;
+	@:op(A-B) public static function sub(lhs:Kelvin, rhs:Kelvin):Kelvin;
+	@:op(A*B) public static function mulFloat(lhs:Kelvin, rhs:Float):Kelvin;
+	@:op(A/B) public static function divFloat(lhs:Kelvin, rhs:Float):Kelvin;
+	@:op(A/B) public static function div(lhs:Kelvin, rhs:Kelvin):Float;
+	@:op(A>B) public static function gt(lhs:Kelvin, rhs:Kelvin):Bool;
+	@:op(A<B) public static function lt(lhs:Kelvin, rhs:Kelvin):Bool;
+	@:op(A>=B) public static function gte(lhs:Kelvin, rhs:Kelvin):Bool;
+	@:op(A<=B) public static function lte(lhs:Kelvin, rhs:Kelvin):Bool;
+	@:op(A==B) public static function eq(lhs:Kelvin, rhs:Kelvin):Bool;
+	@:op(A!=B) public static function neq(lhs:Kelvin, rhs:Kelvin):Bool;
 }

@@ -5,14 +5,15 @@ abstract Meter(Float) {
 	
 	public inline function toFloat() return this;
 	
-	@:op(A+B) public function add(rhs:Meter):Meter;
-	@:op(A-B) public function sub(rhs:Meter):Meter;
-	@:op(A*B) public function mul(rhs:Meter):Meter;
-	@:op(A/B) public function div(rhs:Meter):Meter;
-	@:op(A>B) public function gt(rhs:Meter):Bool;
-	@:op(A<B) public function lt(rhs:Meter):Bool;
-	@:op(A>=B) public function gte(rhs:Meter):Bool;
-	@:op(A<=B) public function lte(rhs:Meter):Bool;
-	@:op(A==B) public function eq(rhs:Meter):Bool;
-	@:op(A!=B) public function neq(rhs:Meter):Bool;
+	@:op(A+B) public static function add(lhs:Meter, rhs:Meter):Meter;
+	@:op(A-B) public static function sub(lhs:Meter, rhs:Meter):Meter;
+	@:op(A*B) public static function mulFloat(lhs:Meter, rhs:Float):Meter;
+	@:op(A/B) public static function divFloat(lhs:Meter, rhs:Float):Meter;
+	@:op(A/B) public static function div(lhs:Meter, rhs:Meter):Float;
+	@:op(A>B) public static function gt(lhs:Meter, rhs:Meter):Bool;
+	@:op(A<B) public static function lt(lhs:Meter, rhs:Meter):Bool;
+	@:op(A>=B) public static function gte(lhs:Meter, rhs:Meter):Bool;
+	@:op(A<=B) public static function lte(lhs:Meter, rhs:Meter):Bool;
+	@:op(A==B) public static function eq(lhs:Meter, rhs:Meter):Bool;
+	@:op(A!=B) public static function neq(lhs:Meter, rhs:Meter):Bool;
 }
