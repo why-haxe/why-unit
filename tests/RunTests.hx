@@ -30,6 +30,26 @@ class RunTests {
 		asserts.assert((r + new Radian(1)).toFloat() == 1);
 		asserts.assert((r + d).toFloat() == Math.PI);
 		
+		final d = new Degree(60);
+		final r:Radian = d;
+		asserts.assert(approxEq(d.cos(), 0.5));
+		asserts.assert(approxEq(r.cos(), 0.5));
+		
+		final d = new Degree(30);
+		final r:Radian = d;
+		asserts.assert(approxEq(d.sin(), 0.5));
+		asserts.assert(approxEq(r.sin(), 0.5));
+		
+		final d = new Degree(45);
+		final r:Radian = d;
+		asserts.assert(approxEq(d.tan(), 1));
+		asserts.assert(approxEq(r.tan(), 1));
+		
+		final d = Degree.atan2(1, 1);
+		final r = Radian.atan2(1, 1);
+		asserts.assert(d.toFloat() == 45);
+		asserts.assert(r == d);
+		
 		return asserts.done();
 	}
 	
@@ -74,5 +94,9 @@ class RunTests {
 		asserts.assert(h.toSecond() == m);
 		
 		return asserts.done();
+	}
+	
+	static function approxEq(a:Float, b:Float) {
+		return Math.abs(a - b) < 0.000001;
 	}
 }
