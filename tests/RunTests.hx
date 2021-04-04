@@ -3,6 +3,7 @@ package;
 import why.unit.temperature.*;
 import why.unit.angle.*;
 import why.unit.time.*;
+import why.unit.digital.*;
 
 import tink.unit.*;
 import tink.testrunner.*;
@@ -104,6 +105,22 @@ class RunTests {
 		asserts.assert(b.h.toFloat() == 3);
 		asserts.assert(b.m.toFloat() == 52);
 		asserts.assert(b.s.toFloat() == 35.125);
+		
+		return asserts.done();
+	}
+	
+	public function digital() {
+		final b = new Byte(1024 * 1024);
+		final ki:Kibibyte = b;
+		final mi:Mebibyte = b;
+		asserts.assert(ki.toFloat() == 1024);
+		asserts.assert(mi.toFloat() == 1);
+		
+		final b = new Byte(1000 * 1000);
+		final k:Kilobyte = b;
+		final m:Megabyte = b;
+		asserts.assert(k.toFloat() == 1000);
+		asserts.assert(m.toFloat() == 1);
 		
 		return asserts.done();
 	}
