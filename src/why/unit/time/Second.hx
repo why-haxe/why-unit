@@ -5,6 +5,25 @@ abstract Second(Float) {
 	
 	public inline function toFloat() return this;
 	
+	public function breakdown() {
+		var s:Second = cast this;
+		final d = new Day(Std.int((s:Day).toFloat()));
+		s = s - (d:Second);
+		
+		final h = new Hour(Std.int((s:Hour).toFloat()));
+		s = s - (h:Second);
+		
+		final m = new Minute(Std.int((s:Minute).toFloat()));
+		s = s - (m:Second);
+		
+		return {
+			d: d,
+			h: h,
+			m: m,
+			s: s,
+		}
+	}
+	
 	@:op(A+B) public static function add(lhs:Second, rhs:Second):Second;
 	@:op(A-B) public static function sub(lhs:Second, rhs:Second):Second;
 	@:op(A*B) public static function mulFloat(lhs:Second, rhs:Float):Second;

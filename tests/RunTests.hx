@@ -97,6 +97,14 @@ class RunTests {
 		asserts.assert(m.toSecond() == h);
 		asserts.assert(h.toSecond() == m);
 		
+		final s = new Second(100355.125);
+		final b = s.breakdown();
+		
+		asserts.assert(b.d.toFloat() == 1);
+		asserts.assert(b.h.toFloat() == 3);
+		asserts.assert(b.m.toFloat() == 52);
+		asserts.assert(b.s.toFloat() == 35.125);
+		
 		return asserts.done();
 	}
 	
