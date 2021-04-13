@@ -1,6 +1,8 @@
 package why.unit.digital;
 
 abstract Byte(Int) {
+	public static inline final SYMBOL = 'B';
+	
 	public inline function new(v) this = v;
 	
 	public inline function toFloat():Float return this;

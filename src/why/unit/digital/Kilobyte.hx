@@ -1,6 +1,8 @@
 package why.unit.digital;
 
 abstract Kilobyte(Float) {
+	public static inline final SYMBOL = 'KB';
+	
 	static inline final BYTES = 1000;
 	
 	public inline function new(v) this = v;

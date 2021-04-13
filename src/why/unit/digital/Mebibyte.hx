@@ -1,6 +1,8 @@
 package why.unit.digital;
 
 abstract Mebibyte(Float) {
+	public static inline final SYMBOL = 'MiB';
+	
 	static inline final BYTES = 1024 * 1024;
 	
 	public inline function new(v) this = v;

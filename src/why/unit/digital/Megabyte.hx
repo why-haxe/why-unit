@@ -1,6 +1,8 @@
 package why.unit.digital;
 
 abstract Megabyte(Float) {
+	public static inline final SYMBOL = 'MB';
+	
 	static inline final BYTES = 1000 * 1000;
 	
 	public inline function new(v) this = v;

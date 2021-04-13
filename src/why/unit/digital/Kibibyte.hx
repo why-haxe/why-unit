@@ -1,6 +1,8 @@
 package why.unit.digital;
 
 abstract Kibibyte(Float) {
+	public static inline final SYMBOL = 'KiB';
+	
 	static inline final BYTES = 1024;
 	
 	public inline function new(v) this = v;
