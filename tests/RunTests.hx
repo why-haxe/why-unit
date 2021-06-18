@@ -1,5 +1,7 @@
 package;
 
+import why.unit.energy.*;
+import why.unit.electricity.*;
 import why.unit.temperature.*;
 import why.unit.angle.*;
 import why.unit.time.*;
@@ -106,6 +108,36 @@ class RunTests {
 		asserts.assert(b.m.toFloat() == 52);
 		asserts.assert(b.s.toFloat() == 35.125);
 		
+		return asserts.done();
+	}
+	
+	public function electricity() {
+		final a = new Ampere(10);
+		final v = new Volt(220);
+		final w = a * v;
+		
+		asserts.assert(w.symbol() == 'W');
+		asserts.assert(w.toFloat() == 2200);
+		
+		final a = w / v;
+		asserts.assert(a.symbol() == 'A');
+		asserts.assert(a.toFloat() == 10);
+		
+		final v = w / a;
+		asserts.assert(v.symbol() == 'V');
+		asserts.assert(v.toFloat() == 220);
+		
+		return asserts.done();
+	}
+	
+	public function energy() {
+		final w = new Watt(10);
+		final s = new Second(10);
+		final j = w * s;
+		
+		asserts.assert(w.symbol() == 'W');
+		asserts.assert(j.symbol() == 'J');
+		asserts.assert(j.toFloat() == 100);
 		return asserts.done();
 	}
 	
