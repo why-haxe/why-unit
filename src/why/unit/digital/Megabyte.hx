@@ -7,6 +7,7 @@ abstract Megabyte(Float) {
 	
 	public inline function new(v) this = v;
 	
+	public inline function symbol() return SYMBOL;
 	public inline function toFloat() return this;
 	
 	@:from public static inline function fromByte(v:Byte):Megabyte

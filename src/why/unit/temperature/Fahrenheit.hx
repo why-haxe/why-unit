@@ -1,10 +1,12 @@
 package why.unit.temperature;
 
 abstract Fahrenheit(Float) {
+	public static inline final SYMBOL = '°F';
 	static inline final OFFSET = 459.67;
 	
 	public inline function new(v) this = v;
 	
+	public inline function symbol() return SYMBOL;
 	public inline function toFloat() return this;
 	
 	@:from public static inline function fromKelvin(v:Kelvin):Fahrenheit

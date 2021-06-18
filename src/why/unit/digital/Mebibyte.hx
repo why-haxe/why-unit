@@ -5,6 +5,7 @@ abstract Mebibyte(Float) {
 	
 	static inline final BYTES = 1024 * 1024;
 	
+	public inline function symbol() return SYMBOL;
 	public inline function new(v) this = v;
 	
 	public inline function toFloat() return this;

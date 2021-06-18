@@ -1,8 +1,11 @@
 package why.unit.length;
 
 abstract Meter(Float) {
+	public static inline final SYMBOL = 'm';
+	
 	public inline function new(v) this = v;
 	
+	public inline function symbol() return SYMBOL;
 	public inline function toFloat() return this;
 	
 	@:op(A+B) public static function add(lhs:Meter, rhs:Meter):Meter;

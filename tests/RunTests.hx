@@ -70,6 +70,9 @@ class RunTests {
 		final c:Celsius = k;
 		final f:Fahrenheit = k;
 		
+		asserts.assert(k.symbol() == 'K');
+		asserts.assert(c.symbol() == '°C');
+		asserts.assert(f.symbol() == '°F');
 		asserts.assert(k.toFloat() == 0);
 		asserts.assert(c.toFloat() == -273.15);
 		asserts.assert(f.toFloat() == -459.67);
@@ -131,13 +134,16 @@ class RunTests {
 	}
 	
 	public function energy() {
-		final w = new Watt(10);
+		final w = new Watt(1000);
 		final s = new Second(10);
 		final j = w * s;
+		final kw:Kilowatt = w;
 		
 		asserts.assert(w.symbol() == 'W');
 		asserts.assert(j.symbol() == 'J');
-		asserts.assert(j.toFloat() == 100);
+		asserts.assert(kw.symbol() == 'kW');
+		asserts.assert(j.toFloat() == 10000);
+		asserts.assert(kw.toFloat() == 1);
 		return asserts.done();
 	}
 	
@@ -145,12 +151,16 @@ class RunTests {
 		final b = new Byte(1024 * 1024);
 		final ki:Kibibyte = b;
 		final mi:Mebibyte = b;
+		asserts.assert(ki.symbol() == 'KiB');
+		asserts.assert(mi.symbol() == 'MiB');
 		asserts.assert(ki.toFloat() == 1024);
 		asserts.assert(mi.toFloat() == 1);
 		
 		final b = new Byte(1000 * 1000);
 		final k:Kilobyte = b;
 		final m:Megabyte = b;
+		asserts.assert(k.symbol() == 'KB');
+		asserts.assert(m.symbol() == 'MB');
 		asserts.assert(k.toFloat() == 1000);
 		asserts.assert(m.toFloat() == 1);
 		

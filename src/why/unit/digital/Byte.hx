@@ -5,6 +5,7 @@ abstract Byte(Int) {
 	
 	public inline function new(v) this = v;
 	
+	public inline function symbol() return SYMBOL;
 	public inline function toFloat():Float return this;
 	public inline function toInt() return this;
 	

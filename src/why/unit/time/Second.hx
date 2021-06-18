@@ -1,8 +1,11 @@
 package why.unit.time;
 
 abstract Second(Float) {
+	public static inline final SYMBOL = 's';
+	
 	public inline function new(v) this = v;
 	
+	public inline function symbol() return SYMBOL;
 	public inline function toFloat() return this;
 	
 	public function breakdown() {
