@@ -1,8 +1,12 @@
 package why.unit.angle;
 
 abstract Radian(Float) {
+	public static inline final SYMBOL = 'rad';
+	
 	public inline function new(v) this = v;
 	
+	public var symbol(get, never):String;
+	public inline function get_symbol() return SYMBOL;
 	public inline function toFloat()
 		return this;
 	

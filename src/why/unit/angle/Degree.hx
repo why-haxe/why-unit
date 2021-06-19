@@ -1,7 +1,13 @@
 package why.unit.angle;
 
 abstract Degree(Float) {
+	public static inline final SYMBOL = '°';
 	static final RADIANS = Math.PI / 180;
+	
+	public inline function new(v) this = v;
+	
+	public var symbol(get, never):String;
+	public inline function get_symbol() return SYMBOL;
 	
 	public inline function new(v) this = v;
 	

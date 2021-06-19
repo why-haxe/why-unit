@@ -1,8 +1,8 @@
 package why.unit.temperature;
 
 abstract Celsius(Float) {
-	static inline final OFFSET = 273.15;
 	public static inline final SYMBOL = '°C';
+	static inline final OFFSET = 273.15;
 	
 	public inline function new(v) this = v;
 	
