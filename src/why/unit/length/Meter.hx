@@ -5,7 +5,8 @@ abstract Meter(Float) {
 	
 	public inline function new(v) this = v;
 	
-	public inline function symbol() return SYMBOL;
+	public var symbol(get, never):String;
+	public inline function get_symbol() return SYMBOL;
 	public inline function toFloat() return this;
 	
 	@:op(A+B) public static function add(lhs:Meter, rhs:Meter):Meter;

@@ -22,17 +22,17 @@ final v = new Volt(220);
 
 final w = a * v;
 $type(w); // Watt
-trace(w.symbol()); // 'W'
+trace(w.symbol); // 'W'
 trace(w.toFloat()); // 2200
 
 final a = w / v;
 $type(a); // Ampere
-trace(a.symbol()); // 'A'
+trace(a.symbol); // 'A'
 trace(a.toFloat()); // 10
 
 final v = w / a;
 $type(v); // Volt
-trace(v.symbol()); // 'V'
+trace(v.symbol); // 'V'
 trace(v.toFloat()); // 220
 ```
 

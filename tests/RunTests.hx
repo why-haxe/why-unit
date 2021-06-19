@@ -70,9 +70,9 @@ class RunTests {
 		final c:Celsius = k;
 		final f:Fahrenheit = k;
 		
-		asserts.assert(k.symbol() == 'K');
-		asserts.assert(c.symbol() == '°C');
-		asserts.assert(f.symbol() == '°F');
+		asserts.assert(k.symbol == 'K');
+		asserts.assert(c.symbol == '°C');
+		asserts.assert(f.symbol == '°F');
 		asserts.assert(k.toFloat() == 0);
 		asserts.assert(c.toFloat() == -273.15);
 		asserts.assert(f.toFloat() == -459.67);
@@ -119,15 +119,15 @@ class RunTests {
 		final v = new Volt(220);
 		final w = a * v;
 		
-		asserts.assert(w.symbol() == 'W');
+		asserts.assert(w.symbol == 'W');
 		asserts.assert(w.toFloat() == 2200);
 		
 		final a = w / v;
-		asserts.assert(a.symbol() == 'A');
+		asserts.assert(a.symbol == 'A');
 		asserts.assert(a.toFloat() == 10);
 		
 		final v = w / a;
-		asserts.assert(v.symbol() == 'V');
+		asserts.assert(v.symbol == 'V');
 		asserts.assert(v.toFloat() == 220);
 		
 		return asserts.done();
@@ -139,9 +139,9 @@ class RunTests {
 		final j = w * s;
 		final kw:Kilowatt = w;
 		
-		asserts.assert(w.symbol() == 'W');
-		asserts.assert(j.symbol() == 'J');
-		asserts.assert(kw.symbol() == 'kW');
+		asserts.assert(w.symbol == 'W');
+		asserts.assert(j.symbol == 'J');
+		asserts.assert(kw.symbol == 'kW');
 		asserts.assert(j.toFloat() == 10000);
 		asserts.assert(kw.toFloat() == 1);
 		return asserts.done();
@@ -151,16 +151,16 @@ class RunTests {
 		final b = new Byte(1024 * 1024);
 		final ki:Kibibyte = b;
 		final mi:Mebibyte = b;
-		asserts.assert(ki.symbol() == 'KiB');
-		asserts.assert(mi.symbol() == 'MiB');
+		asserts.assert(ki.symbol == 'KiB');
+		asserts.assert(mi.symbol == 'MiB');
 		asserts.assert(ki.toFloat() == 1024);
 		asserts.assert(mi.toFloat() == 1);
 		
 		final b = new Byte(1000 * 1000);
 		final k:Kilobyte = b;
 		final m:Megabyte = b;
-		asserts.assert(k.symbol() == 'KB');
-		asserts.assert(m.symbol() == 'MB');
+		asserts.assert(k.symbol == 'KB');
+		asserts.assert(m.symbol == 'MB');
 		asserts.assert(k.toFloat() == 1000);
 		asserts.assert(m.toFloat() == 1);
 		
