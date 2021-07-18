@@ -12,7 +12,6 @@ import tink.testrunner.*;
 
 @:asserts
 class RunTests {
-
 	static function main() {
 		Runner.run(TestBatch.make(new RunTests())).handle(Runner.exit);
 	}
@@ -144,6 +143,14 @@ class RunTests {
 		asserts.assert(kw.symbol == 'kW');
 		asserts.assert(j.toFloat() == 10000);
 		asserts.assert(kw.toFloat() == 1);
+		
+		final kwh = new KilowattHour(1);
+		final j:Joule = kwh;
+		asserts.assert(kwh.toFloat() == 1);
+		asserts.assert(kwh.symbol == 'kWh');
+		asserts.assert(j.toFloat() == 3600000);
+		asserts.assert((j:KilowattHour).toFloat() == 1);
+		
 		return asserts.done();
 	}
 	
