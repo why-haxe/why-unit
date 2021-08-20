@@ -1,5 +1,7 @@
 package why.unit.energy;
 
+@:jsonStringify(v -> v.toFloat())
+@:jsonParse(v -> new why.unit.energy.Joule(v))
 abstract Joule(Float) {
 	public static inline final SYMBOL = 'J';
 	

@@ -1,5 +1,7 @@
 package why.unit.energy;
 
+@:jsonStringify(v -> v.toFloat())
+@:jsonParse(v -> new why.unit.energy.Kilowatt(v))
 abstract Kilowatt(Float) {
 	public static inline final SYMBOL = 'kW';
 	static inline final WATT = 1000;
