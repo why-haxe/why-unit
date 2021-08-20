@@ -1,5 +1,7 @@
 package why.unit.energy;
 
+@:jsonStringify(v -> v.toFloat())
+@:jsonParse(why.unit.energy.KilowattHour.new)
 abstract KilowattHour(Float) {
 	public static inline final SYMBOL = 'kWh';
 	static inline final JOULE = 3600000;
