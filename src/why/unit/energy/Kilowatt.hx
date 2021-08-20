@@ -1,7 +1,9 @@
 package why.unit.energy;
 
+#if tink_json
 @:jsonStringify(v -> v.toFloat())
 @:jsonParse(v -> new why.unit.energy.Kilowatt(v))
+#end
 abstract Kilowatt(Float) {
 	public static inline final SYMBOL = 'kW';
 	static inline final WATT = 1000;

@@ -1,7 +1,9 @@
 package why.unit.energy;
 
+#if tink_json
 @:jsonStringify(v -> v.toFloat())
 @:jsonParse(v -> new why.unit.energy.KilowattHour(v))
+#end
 abstract KilowattHour(Float) {
 	public static inline final SYMBOL = 'kWh';
 	static inline final JOULE = 3600000;
