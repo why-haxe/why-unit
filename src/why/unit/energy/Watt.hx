@@ -11,6 +11,7 @@ abstract Watt(Float) {
 	inline function get_symbol() return SYMBOL;
 	public inline function toFloat() return this;
 	
+	@:op(-A) public static function neg(v:Watt):Watt;
 	@:op(A+B) public static function add(lhs:Watt, rhs:Watt):Watt;
 	@:op(A-B) public static function sub(lhs:Watt, rhs:Watt):Watt;
 	@:op(A*B) public static function mulFloat(lhs:Watt, rhs:Float):Watt;

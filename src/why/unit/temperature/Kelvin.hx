@@ -9,6 +9,7 @@ abstract Kelvin(Float) {
 	inline function get_symbol() return SYMBOL;
 	public inline function toFloat() return this;
 	
+	@:op(-A) public static function neg(v:Kelvin):Kelvin;
 	@:op(A+B) public static function add(lhs:Kelvin, rhs:Kelvin):Kelvin;
 	@:op(A-B) public static function sub(lhs:Kelvin, rhs:Kelvin):Kelvin;
 	@:op(A*B) public static function mulFloat(lhs:Kelvin, rhs:Float):Kelvin;

@@ -10,6 +10,7 @@ abstract Byte(Int) {
 	public inline function toFloat():Float return this;
 	public inline function toInt() return this;
 	
+	@:op(-A) public static function neg(v:Byte):Byte;
 	@:op(A+B) public static function add(lhs:Byte, rhs:Byte):Byte;
 	@:op(A-B) public static function sub(lhs:Byte, rhs:Byte):Byte;
 	@:op(A*B) public static function mulInt(lhs:Byte, rhs:Int):Byte;

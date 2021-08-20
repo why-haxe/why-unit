@@ -26,6 +26,7 @@ abstract Radian(Float) {
 	public static inline function atan2(y, x)
 		return new Radian(Math.atan2(y, x));
 	
+	@:op(-A) public static function neg(v:Radian):Radian;
 	@:op(A+B) public static function add(lhs:Radian, rhs:Radian):Radian;
 	@:op(A-B) public static function sub(lhs:Radian, rhs:Radian):Radian;
 	@:op(A*B) public static function mulFloat(lhs:Radian, rhs:Float):Radian;

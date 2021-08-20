@@ -9,6 +9,7 @@ abstract Meter(Float) {
 	inline function get_symbol() return SYMBOL;
 	public inline function toFloat() return this;
 	
+	@:op(-A) public static function neg(v:Meter):Meter;
 	@:op(A+B) public static function add(lhs:Meter, rhs:Meter):Meter;
 	@:op(A-B) public static function sub(lhs:Meter, rhs:Meter):Meter;
 	@:op(A*B) public static function mulFloat(lhs:Meter, rhs:Float):Meter;

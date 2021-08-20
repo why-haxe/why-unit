@@ -11,6 +11,7 @@ abstract Joule(Float) {
 	inline function get_symbol() return SYMBOL;
 	public inline function toFloat() return this;
 	
+	@:op(-A) public static function neg(v:Joule):Joule;
 	@:op(A+B) public static function add(lhs:Joule, rhs:Joule):Joule;
 	@:op(A-B) public static function sub(lhs:Joule, rhs:Joule):Joule;
 	@:op(A*B) public static function mulFloat(lhs:Joule, rhs:Float):Joule;

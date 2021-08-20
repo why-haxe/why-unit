@@ -9,6 +9,7 @@ abstract Volt(Float) {
 	inline function get_symbol() return SYMBOL;
 	public inline function toFloat() return this;
 	
+	@:op(-A) public static function neg(v:Volt):Volt;
 	@:op(A+B) public static function add(lhs:Volt, rhs:Volt):Volt;
 	@:op(A-B) public static function sub(lhs:Volt, rhs:Volt):Volt;
 	@:op(A*B) public static function mulFloat(lhs:Volt, rhs:Float):Volt;

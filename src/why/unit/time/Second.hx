@@ -28,6 +28,7 @@ abstract Second(Float) {
 		}
 	}
 	
+	@:op(-A) public static function neg(v:Second):Second;
 	@:op(A+B) public static function add(lhs:Second, rhs:Second):Second;
 	@:op(A-B) public static function sub(lhs:Second, rhs:Second):Second;
 	@:op(A*B) public static function mulFloat(lhs:Second, rhs:Float):Second;

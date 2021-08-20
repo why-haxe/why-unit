@@ -9,6 +9,7 @@ abstract Ampere(Float) {
 	inline function get_symbol() return SYMBOL;
 	public inline function toFloat() return this;
 	
+	@:op(-A) public static function neg(v:Ampere):Ampere;
 	@:op(A+B) public static function add(lhs:Ampere, rhs:Ampere):Ampere;
 	@:op(A-B) public static function sub(lhs:Ampere, rhs:Ampere):Ampere;
 	@:op(A*B) public static function mulFloat(lhs:Ampere, rhs:Float):Ampere;

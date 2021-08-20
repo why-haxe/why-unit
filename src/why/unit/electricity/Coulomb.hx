@@ -10,6 +10,7 @@ abstract Coulomb(Float) {
 	inline function get_symbol() return SYMBOL;
 	public inline function toFloat() return this;
 	
+	@:op(-A) public static function neg(v:Coulomb):Coulomb;
 	@:op(A+B) public static function add(lhs:Coulomb, rhs:Coulomb):Coulomb;
 	@:op(A-B) public static function sub(lhs:Coulomb, rhs:Coulomb):Coulomb;
 	@:op(A*B) public static function mulFloat(lhs:Coulomb, rhs:Float):Coulomb;
