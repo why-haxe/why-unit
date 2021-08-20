@@ -9,7 +9,7 @@ abstract KilowattHour(Float) {
 	public inline function new(v) this = v;
 	
 	public var symbol(get, never):String;
-	public inline function get_symbol() return SYMBOL;
+	inline function get_symbol() return SYMBOL;
 	public inline function toFloat() return this;
 	
 	@:from public static inline function fromJoule(v:Joule):KilowattHour

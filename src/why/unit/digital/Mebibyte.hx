@@ -6,7 +6,7 @@ abstract Mebibyte(Float) {
 	static inline final BYTES = 1024 * 1024;
 	
 	public var symbol(get, never):String;
-	public inline function get_symbol() return SYMBOL;
+	inline function get_symbol() return SYMBOL;
 	public inline function new(v) this = v;
 	
 	public inline function toFloat() return this;

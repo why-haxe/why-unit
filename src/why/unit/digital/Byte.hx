@@ -6,7 +6,7 @@ abstract Byte(Int) {
 	public inline function new(v) this = v;
 	
 	public var symbol(get, never):String;
-	public inline function get_symbol() return SYMBOL;
+	inline function get_symbol() return SYMBOL;
 	public inline function toFloat():Float return this;
 	public inline function toInt() return this;
 	
