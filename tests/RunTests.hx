@@ -11,7 +11,9 @@ import tink.unit.*;
 import tink.testrunner.*;
 
 @:asserts
+@:analyzer(no_const_propagation)
 class RunTests {
+	
 	static function main() {
 		Runner.run(TestBatch.make(new RunTests())).handle(Runner.exit);
 	}
@@ -88,10 +90,12 @@ class RunTests {
 	
 	public function time() {
 		final s = new Second(7200);
+		final ms:Millisecond = s;
 		final m:Minute = s;
 		final h:Hour = s;
 		
 		asserts.assert(s.toFloat() == 7200);
+		asserts.assert(ms.toFloat() == 7200000);
 		asserts.assert(m.toFloat() == 120);
 		asserts.assert(h.toFloat() == 2);
 		
