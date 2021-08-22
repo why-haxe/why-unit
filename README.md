@@ -55,3 +55,17 @@ let v = w / a;
 console.log("V");
 console.log(v);
 ```
+
+### Drop-in Replacement for Date, DateTools and Math in stdlib
+
+Apply proper units in these classes. For example,  `date.getTime()` will give you `Millisecond`, trigonometric functions in Math will accept and return `Radian`, and so on.
+
+Best used with a top-level `import.hx`:
+
+```
+import why.Date;
+import why.Math;
+
+using why.DateTools;
+```
+

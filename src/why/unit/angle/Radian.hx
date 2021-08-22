@@ -11,20 +11,20 @@ abstract Radian(Float) {
 		return this;
 	
 	public inline function cos()
-		return Math.cos(this);
+		return std.Math.cos(this);
 	public inline function sin()
-		return Math.sin(this);
+		return std.Math.sin(this);
 	public inline function tan()
-		return Math.tan(this);
+		return std.Math.tan(this);
 	
 	public static inline function acos(v)
-		return new Radian(Math.acos(v));
+		return why.Math.acos(v);
 	public static inline function asin(v)
-		return new Radian(Math.asin(v));
+		return why.Math.asin(v);
 	public static inline function atan(v)
-		return new Radian(Math.atan(v));
+		return why.Math.atan(v);
 	public static inline function atan2(y, x)
-		return new Radian(Math.atan2(y, x));
+		return why.Math.atan2(y, x);
 	
 	@:op(-A) public static function neg(v:Radian):Radian;
 	@:op(A+B) public static function add(lhs:Radian, rhs:Radian):Radian;

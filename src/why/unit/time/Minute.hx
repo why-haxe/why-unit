@@ -12,4 +12,10 @@ abstract Minute(Float) {
 	
 	@:to public inline function toSecond():Second
 		return new Second(this * SECONDS);
+	
+	@:from public static inline function fromMillisecond(v:Millisecond):Minute
+		return fromSecond(v);
+	
+	@:to public inline function toMillisecond():Millisecond
+		return toSecond();
 }

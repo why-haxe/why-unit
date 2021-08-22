@@ -15,7 +15,11 @@ import tink.testrunner.*;
 class RunTests {
 	
 	static function main() {
-		Runner.run(TestBatch.make(new RunTests())).handle(Runner.exit);
+		Runner.run(TestBatch.make([
+			new RunTests(),
+			new MathTest(),
+			new DateTest(),
+		])).handle(Runner.exit);
 	}
 	
 	function new() {}
