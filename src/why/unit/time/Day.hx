@@ -1,5 +1,10 @@
 package why.unit.time;
 
+
+#if tink_json
+@:jsonStringify(v -> v.toFloat())
+@:jsonParse(v -> new why.unit.time.Day(v))
+#end
 abstract Day(Float) {
 	static inline final SECONDS = 60 * 60 * 24;
 	

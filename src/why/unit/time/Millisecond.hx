@@ -1,5 +1,10 @@
 package why.unit.time;
 
+
+#if tink_json
+@:jsonStringify(v -> v.toFloat())
+@:jsonParse(v -> new why.unit.time.Millisecond(v))
+#end
 abstract Millisecond(Float) {
 	public static inline final SYMBOL = 'ms';
 	static inline final SECONDS = 1 / 1000;

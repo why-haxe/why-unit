@@ -1,5 +1,10 @@
 package why.unit.time;
 
+
+#if tink_json
+@:jsonStringify(v -> v.toFloat())
+@:jsonParse(v -> new why.unit.time.Second(v))
+#end
 abstract Second(Float) {
 	public static inline final SYMBOL = 's';
 	
