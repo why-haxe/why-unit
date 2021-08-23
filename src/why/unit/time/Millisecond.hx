@@ -20,4 +20,17 @@ abstract Millisecond(Float) {
 	
 	@:to public inline function toSecond():Second
 		return new Second(this * SECONDS);
+
+	@:op(-A) public static function neg(v:Millisecond):Millisecond;
+	@:op(A+B) public static function add(lhs:Millisecond, rhs:Millisecond):Millisecond;
+	@:op(A-B) public static function sub(lhs:Millisecond, rhs:Millisecond):Millisecond;
+	@:op(A*B) public static function mulFloat(lhs:Millisecond, rhs:Float):Millisecond;
+	@:op(A/B) public static function divFloat(lhs:Millisecond, rhs:Float):Millisecond;
+	@:op(A/B) public static function div(lhs:Millisecond, rhs:Millisecond):Float;
+	@:op(A>B) public static function gt(lhs:Millisecond, rhs:Millisecond):Bool;
+	@:op(A<B) public static function lt(lhs:Millisecond, rhs:Millisecond):Bool;
+	@:op(A>=B) public static function gte(lhs:Millisecond, rhs:Millisecond):Bool;
+	@:op(A<=B) public static function lte(lhs:Millisecond, rhs:Millisecond):Bool;
+	@:op(A==B) public static function eq(lhs:Millisecond, rhs:Millisecond):Bool;
+	@:op(A!=B) public static function neq(lhs:Millisecond, rhs:Millisecond):Bool;
 }
