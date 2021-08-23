@@ -1,4 +1,4 @@
-package why;
+package why.util;
 
 import why.unit.time.*;
 
@@ -14,6 +14,6 @@ abstract DateTools(std.DateTools) {
 		return new Second(n);
 	public inline static function milliseconds(n:Float)
 		return new Millisecond(n);
-	public inline static function delta(d:Date, t:Millisecond):why.Date
+	public inline static function delta(d:Date, t:Millisecond):why.util.Date
 		return std.DateTools.delta(d, t.toFloat());
 }

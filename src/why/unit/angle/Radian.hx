@@ -18,13 +18,13 @@ abstract Radian(Float) {
 		return std.Math.tan(this);
 	
 	public static inline function acos(v)
-		return why.Math.acos(v);
+		return why.util.Math.acos(v);
 	public static inline function asin(v)
-		return why.Math.asin(v);
+		return why.util.Math.asin(v);
 	public static inline function atan(v)
-		return why.Math.atan(v);
+		return why.util.Math.atan(v);
 	public static inline function atan2(y, x)
-		return why.Math.atan2(y, x);
+		return why.util.Math.atan2(y, x);
 	
 	@:op(-A) public static function neg(v:Radian):Radian;
 	@:op(A+B) public static function add(lhs:Radian, rhs:Radian):Radian;

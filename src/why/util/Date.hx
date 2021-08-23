@@ -1,4 +1,4 @@
-package why;
+package why.util;
 
 import why.unit.time.*;
 
@@ -12,4 +12,6 @@ abstract Date(std.Date) from std.Date to std.Date {
 		return new Millisecond(this.getTime());
 	public inline function getTimezoneOffset()
 		return new Minute(this.getTimezoneOffset());
+	public inline function asDate():std.Date
+		return this;
 }
