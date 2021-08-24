@@ -62,7 +62,7 @@ Apply proper units in these classes. For example,  `date.getTime()` will give yo
 
 Best used with a top-level `import.hx`:
 
-```
+```haxe
 import why.util.Date;
 import why.util.Math;
 
