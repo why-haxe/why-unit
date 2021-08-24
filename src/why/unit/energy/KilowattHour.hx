@@ -19,4 +19,17 @@ abstract KilowattHour(Float) {
 	
 	@:to public inline function toJoule():Joule
 		return new Joule(this * JOULE);
+	
+	@:op(-A) public static function neg(v:KilowattHour):KilowattHour;
+	@:op(A+B) public static function add(lhs:KilowattHour, rhs:KilowattHour):KilowattHour;
+	@:op(A-B) public static function sub(lhs:KilowattHour, rhs:KilowattHour):KilowattHour;
+	@:op(A*B) public static function mulFloat(lhs:KilowattHour, rhs:Float):KilowattHour;
+	@:op(A/B) public static function divFloat(lhs:KilowattHour, rhs:Float):KilowattHour;
+	@:op(A/B) public static function div(lhs:KilowattHour, rhs:KilowattHour):Float;
+	@:op(A>B) public static function gt(lhs:KilowattHour, rhs:KilowattHour):Bool;
+	@:op(A<B) public static function lt(lhs:KilowattHour, rhs:KilowattHour):Bool;
+	@:op(A>=B) public static function gte(lhs:KilowattHour, rhs:KilowattHour):Bool;
+	@:op(A<=B) public static function lte(lhs:KilowattHour, rhs:KilowattHour):Bool;
+	@:op(A==B) public static function eq(lhs:KilowattHour, rhs:KilowattHour):Bool;
+	@:op(A!=B) public static function neq(lhs:KilowattHour, rhs:KilowattHour):Bool;
 }
