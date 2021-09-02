@@ -9,6 +9,22 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        haxe-version:
+          - stable
+          - nightly
+        target:
+          - interp
+          - node
+          - neko
+          - python
+          - php
+          - cpp
+          - js
+          - java -D jvm
+          - cs -D erase-generics
 
     steps:
     - name: Checkout repo
@@ -34,9 +50,12 @@ jobs:
         
     - name: Install Lix
       uses: lix-pm/setup-lix@master
+
+    - name: Install Haxe
+      run: lix install haxe ${{ matrix.haxe-version }}
       
     - name: Download Haxe and libraries
       run: lix download
       
     - name: Run Tests
-      run: lix run travix node
+      run: lix run travix ${{ matrix.target }}
