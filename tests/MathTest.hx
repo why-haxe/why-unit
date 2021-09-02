@@ -1,6 +1,6 @@
 package;
 
-import why.util.Math;
+import why.unit.util.Math;
 import why.unit.angle.*;
 
 @:asserts

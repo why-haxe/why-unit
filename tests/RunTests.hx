@@ -19,6 +19,7 @@ class RunTests {
 			new RunTests(),
 			new MathTest(),
 			new DateTest(),
+			new TimerTest(),
 		])).handle(Runner.exit);
 	}
 	

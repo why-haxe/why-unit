@@ -2,8 +2,8 @@ package;
 
 import why.unit.time.*;
 
-using why.util.Date;
-using why.util.DateTools;
+using why.unit.util.Date;
+using why.unit.util.DateTools;
 
 @:asserts
 class DateTest {

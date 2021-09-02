@@ -1,4 +1,4 @@
-package why.util;
+package why.unit.util;
 
 import why.unit.angle.Radian;
 
