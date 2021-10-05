@@ -1,5 +1,9 @@
 package why.unit.length;
 
+#if tink_json
+@:jsonStringify(v -> v.toFloat())
+@:jsonParse(v -> new why.unit.length.Mile(v))
+#end
 abstract Mile(Float) {
 	public static inline final SYMBOL = 'mi';
 	static inline final METERS = 1609.344;

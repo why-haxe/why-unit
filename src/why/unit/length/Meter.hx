@@ -1,5 +1,9 @@
 package why.unit.length;
 
+#if tink_json
+@:jsonStringify(v -> v.toFloat())
+@:jsonParse(v -> new why.unit.length.Meter(v))
+#end
 abstract Meter(Float) {
 	public static inline final SYMBOL = 'm';
 	
