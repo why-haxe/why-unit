@@ -33,4 +33,18 @@ abstract Degree(Float) {
 	
 	@:to public inline function toRadian():Radian
 		return new Radian(this * RADIANS);
+	
+	@:op(-A) public static function neg(v:Degree):Degree;
+	@:op(A+B) public static function add(lhs:Degree, rhs:Degree):Degree;
+	@:op(A-B) public static function sub(lhs:Degree, rhs:Degree):Degree;
+	@:op(A*B) public static function mulFloat(lhs:Degree, rhs:Float):Degree;
+	@:op(A/B) public static function divFloat(lhs:Degree, rhs:Float):Degree;
+	@:op(A/B) public static function div(lhs:Degree, rhs:Degree):Float;
+	@:op(A%B) public static function mod(lhs:Degree, rhs:Degree):Degree;
+	@:op(A>B) public static function gt(lhs:Degree, rhs:Degree):Bool;
+	@:op(A<B) public static function lt(lhs:Degree, rhs:Degree):Bool;
+	@:op(A>=B) public static function gte(lhs:Degree, rhs:Degree):Bool;
+	@:op(A<=B) public static function lte(lhs:Degree, rhs:Degree):Bool;
+	@:op(A==B) public static function eq(lhs:Degree, rhs:Degree):Bool;
+	@:op(A!=B) public static function neq(lhs:Degree, rhs:Degree):Bool;
 }
