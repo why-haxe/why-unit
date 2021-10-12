@@ -1,5 +1,9 @@
 package why.unit.angle;
 
+#if tink_json
+@:jsonStringify(v -> v.toFloat())
+@:jsonParse(v -> new why.unit.angle.Degree(v))
+#end
 abstract Degree(Float) {
 	public static inline final SYMBOL = '°';
 	static final RADIANS = Math.PI / 180;

@@ -1,5 +1,9 @@
 package why.unit.angle;
 
+#if tink_json
+@:jsonStringify(v -> v.toFloat())
+@:jsonParse(v -> new why.unit.angle.Radian(v))
+#end
 abstract Radian(Float) {
 	public static inline final SYMBOL = 'rad';
 	
