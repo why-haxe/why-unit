@@ -1,5 +1,9 @@
 package why.unit.temperature;
 
+#if tink_json
+@:jsonStringify(v -> v.toFloat())
+@:jsonParse(v -> new why.unit.temperature.Celsius(v))
+#end
 abstract Celsius(Float) {
 	public static inline final SYMBOL = '°C';
 	static inline final OFFSET = 273.15;

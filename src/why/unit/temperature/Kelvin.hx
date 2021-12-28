@@ -1,5 +1,9 @@
 package why.unit.temperature;
 
+#if tink_json
+@:jsonStringify(v -> v.toFloat())
+@:jsonParse(v -> new why.unit.temperature.Kelvin(v))
+#end
 abstract Kelvin(Float) {
 	public static inline final SYMBOL = 'K';
 	

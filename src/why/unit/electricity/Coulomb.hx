@@ -1,6 +1,10 @@
 package why.unit.electricity;
 
 // https://en.wikipedia.org/wiki/Coulomb
+#if tink_json
+@:jsonStringify(v -> v.toFloat())
+@:jsonParse(v -> new why.unit.electricity.Coulomb(v))
+#end
 abstract Coulomb(Float) {
 	public static inline final SYMBOL = 'C';
 	

@@ -1,5 +1,9 @@
 package why.unit.electricity;
 
+#if tink_json
+@:jsonStringify(v -> v.toFloat())
+@:jsonParse(v -> new why.unit.electricity.Volt(v))
+#end
 abstract Volt(Float) {
 	public static inline final SYMBOL = 'V';
 	
