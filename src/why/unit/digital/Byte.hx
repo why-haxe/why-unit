@@ -1,5 +1,9 @@
 package why.unit.digital;
 
+#if tink_json
+@:jsonStringify(v -> v.toFloat())
+@:jsonParse(v -> new why.unit.digital.Byte(v))
+#end
 abstract Byte(Int) {
 	public static inline final SYMBOL = 'B';
 	

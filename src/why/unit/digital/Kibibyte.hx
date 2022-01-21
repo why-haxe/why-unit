@@ -1,5 +1,9 @@
 package why.unit.digital;
 
+#if tink_json
+@:jsonStringify(v -> v.toFloat())
+@:jsonParse(v -> new why.unit.digital.Kibibyte(v))
+#end
 abstract Kibibyte(Float) {
 	public static inline final SYMBOL = 'KiB';
 	

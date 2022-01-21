@@ -1,5 +1,9 @@
 package why.unit.digital;
 
+#if tink_json
+@:jsonStringify(v -> v.toFloat())
+@:jsonParse(v -> new why.unit.digital.Megabyte(v))
+#end
 abstract Megabyte(Float) {
 	public static inline final SYMBOL = 'MB';
 	

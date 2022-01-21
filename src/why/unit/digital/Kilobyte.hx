@@ -1,5 +1,9 @@
 package why.unit.digital;
 
+#if tink_json
+@:jsonStringify(v -> v.toFloat())
+@:jsonParse(v -> new why.unit.digital.Kilobyte(v))
+#end
 abstract Kilobyte(Float) {
 	public static inline final SYMBOL = 'KB';
 	
