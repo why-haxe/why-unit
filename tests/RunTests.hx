@@ -133,10 +133,12 @@ class RunTests {
 		final a = w / v;
 		asserts.assert(a.symbol == 'A');
 		asserts.assert(a.toFloat() == 10);
+		asserts.assert((a:Milliampere).toFloat() == 10000);
 		
 		final v = w / a;
 		asserts.assert(v.symbol == 'V');
 		asserts.assert(v.toFloat() == 220);
+		asserts.assert((v:Millivolt).toFloat() == 220000);
 		
 		return asserts.done();
 	}
