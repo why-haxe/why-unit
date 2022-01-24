@@ -13,6 +13,7 @@ abstract Coulomb(Float) {
 	public var symbol(get, never):String;
 	inline function get_symbol() return SYMBOL;
 	public inline function toFloat() return this;
+	public inline function print() return this + symbol;
 	
 	@:op(-A) public static function neg(v:Coulomb):Coulomb;
 	@:op(A+B) public static function add(lhs:Coulomb, rhs:Coulomb):Coulomb;

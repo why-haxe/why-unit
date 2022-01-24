@@ -12,6 +12,7 @@ abstract Ampere(Float) {
 	public var symbol(get, never):String;
 	inline function get_symbol() return SYMBOL;
 	public inline function toFloat() return this;
+	public inline function print() return this + symbol;
 	
 	@:op(-A) public static function neg(v:Ampere):Ampere;
 	@:op(A+B) public static function add(lhs:Ampere, rhs:Ampere):Ampere;

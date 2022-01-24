@@ -14,6 +14,7 @@ abstract Milliampere(Float) {
 	public var symbol(get, never):String;
 	inline function get_symbol() return SYMBOL;
 	public inline function toFloat() return this;
+	public inline function print() return this + symbol;
 	
 	@:from public static inline function fromAmpere(v:Ampere):Milliampere
 		return new Milliampere(v.toFloat() / AMPERE);

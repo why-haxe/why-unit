@@ -14,6 +14,7 @@ abstract Kilobyte(Float) {
 	public var symbol(get, never):String;
 	inline function get_symbol() return SYMBOL;
 	public inline function toFloat() return this;
+	public inline function print() return this + symbol;
 	
 	@:from public static inline function fromByte(v:Byte):Kilobyte
 		return new Kilobyte(v.toFloat() / BYTES);

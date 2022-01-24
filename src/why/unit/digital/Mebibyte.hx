@@ -14,6 +14,7 @@ abstract Mebibyte(Float) {
 	public inline function new(v) this = v;
 	
 	public inline function toFloat() return this;
+	public inline function print() return this + symbol;
 	
 	@:from public static inline function fromByte(v:Byte):Mebibyte
 		return new Mebibyte(v.toFloat() / BYTES);

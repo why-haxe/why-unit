@@ -12,6 +12,7 @@ abstract Byte(Int) {
 	public var symbol(get, never):String;
 	inline function get_symbol() return SYMBOL;
 	public inline function toFloat():Float return this;
+	public inline function print() return this + symbol;
 	public inline function toInt() return this;
 	
 	@:op(-A) public static function neg(v:Byte):Byte;
