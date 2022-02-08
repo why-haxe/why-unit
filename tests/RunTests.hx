@@ -143,6 +143,7 @@ class RunTests {
 		return asserts.done();
 	}
 	
+	@:include
 	public function energy() {
 		final w = new Watt(1000);
 		final s = new Second(10);
@@ -161,6 +162,13 @@ class RunTests {
 		asserts.assert(kwh.symbol == 'kWh');
 		asserts.assert(j.toFloat() == 3600000);
 		asserts.assert((j:KilowattHour).toFloat() == 1);
+		
+		asserts.assert(approxEq((new DecibelMilliwatt(30):Watt).toFloat(), 1));
+		asserts.assert(approxEq((new DecibelMilliwatt(40):Watt).toFloat(), 10));
+		asserts.assert(approxEq((new DecibelMilliwatt(50):Watt).toFloat(), 100));
+		asserts.assert(approxEq((new Watt(1):DecibelMilliwatt).toFloat(), 30));
+		asserts.assert(approxEq((new Watt(10):DecibelMilliwatt).toFloat(), 40));
+		asserts.assert(approxEq((new Watt(100):DecibelMilliwatt).toFloat(), 50));
 		
 		return asserts.done();
 	}
