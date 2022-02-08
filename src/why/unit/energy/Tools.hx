@@ -5,4 +5,5 @@ class Tools {
 	public static inline function kilowatt(v:Float) return new Kilowatt(v);
 	public static inline function kilowattHour(v:Float) return new KilowattHour(v);
 	public static inline function watt(v:Float) return new Watt(v);
+	public static inline function decibelMilliwatt(v:Float) return new DecibelMilliwatt(v);
 }
