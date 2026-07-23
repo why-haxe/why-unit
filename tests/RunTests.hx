@@ -96,11 +96,13 @@ class RunTests {
 	public function time() {
 		final s = new Second(7200);
 		final ms:Millisecond = s;
+		final ns:Nanosecond = s;
 		final m:Minute = s;
 		final h:Hour = s;
 		
 		asserts.assert(s.toFloat() == 7200);
 		asserts.assert(ms.toFloat() == 7200000);
+		asserts.assert(ns.toFloat() == 7200000000000);
 		asserts.assert(m.toFloat() == 120);
 		asserts.assert(h.toFloat() == 2);
 		
@@ -108,6 +110,8 @@ class RunTests {
 		asserts.assert(m == s);
 		asserts.assert(s == h);
 		asserts.assert(h == s);
+		asserts.assert(s == ns);
+		asserts.assert(ns == s);
 		asserts.assert(m.toSecond() == h);
 		asserts.assert(h.toSecond() == m);
 		
