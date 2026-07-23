@@ -2,19 +2,19 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     strategy:
       matrix:
         haxe-version:
           - stable
-          # - nightly
+          - nightly
         target:
           - interp
           - node
@@ -23,39 +23,26 @@ jobs:
           - php
           - cpp
           - js
-          - java -D jvm
-          - cs -D erase-generics
+          - jvm
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v2
-    
-    - name: Get yarn cache directory path
-      id: yarn-cache-dir-path
-      run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Checkout repo
+        uses: actions/checkout@v7
 
-    - name: Cache Yarn
-      uses: actions/cache@v1
-      with:
-        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-yarn-
-        
-    - name: Cache Haxe
-      uses: actions/cache@v1
-      with:
-        path: ~/haxe
-        key: ${{ runner.os }}-haxe-${{ hashFiles('haxe_libraries/*') }}
-        
-    - name: Install Lix
-      uses: lix-pm/setup-lix@master
+      - name: Cache Haxe
+        uses: actions/cache@v6
+        with:
+          path: ~/haxe
+          key: ${{ runner.os }}-haxe-${{ hashFiles('haxe_libraries/*') }}
 
-    - name: Install Haxe
-      run: lix install haxe ${{ matrix.haxe-version }}
-      
-    - name: Download Haxe and libraries
-      run: lix download
-      
-    - name: Run Tests
-      run: lix run travix ${{ matrix.target }}
+      - name: Install Lix
+        uses: lix-pm/setup-lix@master
+
+      - name: Install Haxe
+        run: lix install haxe ${{ matrix.haxe-version }}
+
+      - name: Download Haxe and libraries
+        run: lix download
+
+      - name: Run Tests
+        run: lix run travix ${{ matrix.target }}
