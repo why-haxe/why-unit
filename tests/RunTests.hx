@@ -93,6 +93,7 @@ class RunTests {
 		return asserts.done();
 	}
 	
+	@:include
 	public function time() {
 		final s = new Second(7200);
 		final ms:Millisecond = s;
